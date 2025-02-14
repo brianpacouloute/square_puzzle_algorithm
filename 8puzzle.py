@@ -27,10 +27,11 @@ class Puzzle:
     def __init__(self, state, parent=None, move=None, cost=0):
         """
         Represents an 8-puzzle state with methods for movement and heuristic calculations
-        state (tuple): A tuple representing the current puzzle configuration
-        parent (Puzzle, optional): Reference to the parent state for path reconstruction
-        move (tuple, optional): The move taken to reach this state
-        cost (int, optional): The g(n) cost from the start state to this state
+
+        state (tuple): A tuple representing the current puzzle configuration\n
+        parent (Puzzle, optional): Reference to the parent state for path reconstruction\n
+        move (tuple, optional): The move taken to reach this state\n
+        cost (int, optional): The g(n) cost from the start state to this state\n
         """
         self.state = state  # Stores the current puzzle state as a tuple
         self.parent = parent  # Reference to the parent state (used for path reconstruction)
@@ -155,7 +156,7 @@ def a_star_search(start_state, heuristic):
 
 def create_reachable_states(n=100):
     """
-Creates n solvable random 8-puzzle states.
+    Creates n solvable random 8-puzzle states.
     Args:
         n (int, optional): The number of states to generate. Defaults to 100.
     Returns:
@@ -172,7 +173,7 @@ Creates n solvable random 8-puzzle states.
 
 def is_solvable(state):
     """
-        Checks if the given 8-puzzle state is solvable.
+    Checks if the given 8-puzzle state is solvable.
     Args:
         state (tuple): The current puzzle state.
     Returns:
@@ -186,11 +187,17 @@ reachable_states = create_reachable_states() # Generate 100 reachable states
 
 
 print("Puzzle Type | Heuristic | Average Steps to Solution | Average Nodes Expanded")
+print("============|===========|===========================|=======================")
 for state in reachable_states:
     puzzle = Puzzle(state)
+
+    # Generates 
     steps_h1, nodes_h1 = a_star_search(puzzle, h1_misplaced_tiles)
     steps_h2, nodes_h2 = a_star_search(puzzle, h2_manhattan_distance)
     steps_h3, nodes_h3 = a_star_search(puzzle, h3_pattern_database)
-    print(f"8-puzzle | h1 | {steps_h1} | {nodes_h1}") # Output for h1 
-    print(f"8-puzzle | h2 | {steps_h2} | {nodes_h2}") # Output for h2
-    print(f"8-puzzle | h3 | {steps_h3} | {nodes_h3}") # Output for h3
+    print(f"8-puzzle    | h1        | {steps_h1:<25,} | {nodes_h1:,}") # Output for h1 
+    print(f"8-puzzle    | h2        | {steps_h2:<25,} | {nodes_h2:,}") # Output for h2
+    print(f"8-puzzle    | h3        | {steps_h3:<25,} | {nodes_h3:,}") # Output for h3
+    print("            |           |                           |")
+
+print("============================================================================")
