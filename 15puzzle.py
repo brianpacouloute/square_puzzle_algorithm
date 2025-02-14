@@ -201,11 +201,15 @@ def create_reachable_states(n=100, moves=10):
 reachable_states = create_reachable_states() # Generate 100 reachable states
 
 print("Puzzle Type | Heuristic | Average Steps to Solution | Average Nodes Expanded")
+print("============|===========|===========================|=======================")
 for state in reachable_states:
     puzzle = Puzzle(state)
     steps_h1, nodes_h1 = a_star_search(puzzle, h1_misplaced_tiles)
     steps_h2, nodes_h2 = a_star_search(puzzle, h2_manhattan_distance)
     steps_h3, nodes_h3 = a_star_search(puzzle, h3_manhattan_linear)
-    print(f"15-puzzle | h1 | {steps_h1} | {nodes_h1}") # Output for h1 
-    print(f"15-puzzle | h2 | {steps_h2} | {nodes_h2}") # Output for h2
-    print(f"15-puzzle | h3 | {steps_h3} | {nodes_h3}") # Output for h3
+    print(f"15-puzzle   | h1        | {steps_h1:<25,} | {nodes_h1:,}") # Output for h1 
+    print(f"15-puzzle   | h2        | {steps_h2:<25,} | {nodes_h2:,}") # Output for h2
+    print(f"15-puzzle   | h3        | {steps_h3:<25,} | {nodes_h3:,}") # Output for h3
+    print("            |           |                           |")
+
+print("============================================================================")
