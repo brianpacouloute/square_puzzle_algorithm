@@ -27,7 +27,7 @@ cd assignment_1_part_2
 py 8puzzle.py
 ```
 
-b) Run the Python script via Python installed from Microsoft Store:
+3. b) Run the Python script via Python installed from Microsoft Store:
 ```bash
 python 8puzzle.py
 ```
@@ -39,7 +39,7 @@ python 8puzzle.py
 py 15puzzle.py
 ```
 
-b) Run the Python script via Python installed from Microsoft Store:
+4. b) Run the Python script via Python installed from Microsoft Store:
 ```bash
 python 15puzzle.py
 ```
