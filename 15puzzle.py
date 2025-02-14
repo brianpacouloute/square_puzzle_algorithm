@@ -181,7 +181,7 @@ def a_star_search(start_state, heuristic):
                 heapq.heappush(open_set, (g + heuristic(child.state), child))
     return None
 
-def create_reachable_states(n=100, moves=10):
+def create_reachable_states(n=100, moves=50):
     """
     Creates n solvable random 15-puzzle states.
     Args:
