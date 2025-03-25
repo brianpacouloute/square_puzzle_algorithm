@@ -12,12 +12,12 @@ To run the code, you must install [Git](https://git-scm.com/downloads) and [Pyth
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/brianpacouloute/assignment_1_part_2.git
+git clone https://github.com/brianpacouloute/square_puzzle_algorithm
 ```
 
 2. Change to directory:
 ```bash
-cd assignment_1_part_2
+cd square_puzzle_algorithm
 ```
 
 ### Running the 8-Puzzle Calculations
